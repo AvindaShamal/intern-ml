@@ -1,4 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# This workflow will install Python dependencies, run tests, format and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 name: Python application
@@ -6,9 +6,10 @@ name: Python application
 on:
   workflow_dispatch:
   push:
-    branches: [ "*" ]
+    branches: ["*"]
   pull_request:
-    branches: [ "*" ]
+    branches: ["*"]
+    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
@@ -16,7 +17,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     # Step 1: Check out the repository
@@ -54,12 +55,12 @@ jobs:
 
     # Step 7: Run tests with pytest
     - name: Test with pytest
-      run: pytest avinda_shamal/test/unit/ --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
+      run: pytest avinda_shamal/test/unit/ --doctest-modules --junitxml=junit/test-results.xml
 
     # Step 8: Upload the test results
     - name: Upload pytest test results
       uses: actions/upload-artifact@v4
       with:
-        name: pytest-results-${{ matrix.python-version }}
-        path: junit/test-results-${{ matrix.python-version }}.xml
+        name: pytest-results
+        path: junit/test-results.xml
       if: ${{ always() }}
