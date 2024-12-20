@@ -57,7 +57,9 @@ def test_hf_len(hf_dataset, split, expected):
 
 
 def test_hf_get_item():
-    transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((32, 32))])
+    transform = transforms.Compose(
+        [transforms.ToTensor(), transforms.Resize((32, 32))]
+    )
     hf_dataset = DatasetDict(
         {
             "train": Dataset.from_dict(

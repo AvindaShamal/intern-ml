@@ -12,8 +12,12 @@ print(f"Splits info: {ds_builder.info.splits}")
 hf_dataset = load_dataset("cifar10")
 
 # initialize the HuggingFaceDataset class
-train_data = HuggingFaceDataset(hf_dataset, "train", transform=transforms.ToTensor())
-test_data = HuggingFaceDataset(hf_dataset, "test", transform=transforms.ToTensor())
+train_data = HuggingFaceDataset(
+    hf_dataset, "train", transform=transforms.ToTensor()
+)
+test_data = HuggingFaceDataset(
+    hf_dataset, "test", transform=transforms.ToTensor()
+)
 
 print(len(test_data))
 print(len(train_data))

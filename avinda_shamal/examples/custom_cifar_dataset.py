@@ -19,8 +19,12 @@ transform = transforms.Compose(
 )
 
 # Load the training and test data
-training_data = CustomImageDataset("D:/Intern ML/cifar10/train", transform=transform)
-test_data = CustomImageDataset("D:/Intern ML/cifar10/test", transform=transform)
+training_data = CustomImageDataset(
+    "D:/Intern ML/cifar10/train", transform=transform
+)
+test_data = CustomImageDataset(
+    "D:/Intern ML/cifar10/test", transform=transform
+)
 
 print(len(training_data))
 
