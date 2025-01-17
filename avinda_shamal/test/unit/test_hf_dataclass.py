@@ -1,4 +1,4 @@
-from cvas.huggingface_dataclass import HuggingFaceDataset
+from cvas.dataclasses import HuggingFaceDataset
 import pytest
 import torch
 from torchvision import transforms

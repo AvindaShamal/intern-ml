@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
-from model import ModelTrainer
+from cvas.model import ModelTrainer
 
 dummy_dataset = TensorDataset(
     torch.randn(100, 3, 32, 32), torch.randint(0, 10, (100,))

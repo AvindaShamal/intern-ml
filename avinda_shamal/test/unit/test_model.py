@@ -1,5 +1,5 @@
 import torch
-from model.nn_model import NNModel
+from cvas.model import NNModel
 
 
 def test_forward():

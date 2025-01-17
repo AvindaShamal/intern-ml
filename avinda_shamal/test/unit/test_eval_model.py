@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
-from model import ModelEvaluator
+from cvas.model import ModelEvaluator
 from unittest.mock import patch
 import numpy as np
 
