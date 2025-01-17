@@ -5,9 +5,9 @@ from torch.utils.data import DataLoader
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
-from model import NNModel
-from model import ModelTrainer
-from model import ModelEvaluator
+from cvas.model import NNModel
+from cvas.model import ModelTrainer
+from cvas.model import ModelEvaluator
 
 # load and normalize the Cifar10 dataset
 std = np.array([0.5, 0.5, 0.5])
