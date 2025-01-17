@@ -122,7 +122,7 @@ class ModelEvaluator:
             plt.plot(
                 fpr["micro"],
                 tpr["micro"],
-                label=f'Micro-average (AUC = {roc_auc["micro"]:.2f})',
+                label=f"Micro-average (AUC = {roc_auc['micro']:.2f})",
                 color="navy",
                 linestyle="--",
             )

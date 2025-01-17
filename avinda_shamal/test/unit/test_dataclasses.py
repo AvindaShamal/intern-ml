@@ -36,7 +36,9 @@ def test_len_custom_dataset(datalist, expected):
 def test_get_item_custom_dataset():
     transform = transforms.Resize((32, 32))
     # Initialize the dataset and set up mock data
-    with patch("cvas.dataclasses.read_image") as mock_read_image:
+    with patch(
+        "cvas.dataclasses.custom_dataclasses.read_image"
+    ) as mock_read_image:
         mock_read_image.return_value = torch.rand(3, 44, 44)
 
         with patch(

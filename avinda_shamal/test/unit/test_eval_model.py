@@ -19,7 +19,7 @@ def test_test_model():
     test_labels = torch.tensor([0, 1, 2, 3])
     dummy_dataset = TensorDataset(test_data, test_labels)
     test_loader = DataLoader(dummy_dataset, batch_size=1, shuffle=False)
-    with patch("model.ModelEvaluator.roc_auc") as mock_roc_auc:
+    with patch("cvas.model.eval_class.ModelEvaluator.roc_auc") as mock_roc_auc:
         mock_roc_auc.return_value = {"micro": 0.5}
         evaluator = ModelEvaluator(nn.Linear(4, 4), test_loader)
         # Test the method
